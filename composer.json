@@ -12,6 +12,7 @@
         "role": "Developer"
     }],
     "require": {
+        "duncan3dc/domparser": "^1.5",
         "symfony/yaml": "^3.4 || ^4.2 || ^5.4 || ^6.4 || ^7.4 || ^8.2",
         "ext-json": "*",
         "php": "^7.4 || ^8.0"

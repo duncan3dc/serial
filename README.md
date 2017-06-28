@@ -14,6 +14,7 @@ Available Classes
 * Json (using the native json_* functions)
 * Yaml (using the Symfony Yaml component)
 * Php (using the native serialize/unserialize functions)
+* Xml (using the [XmlWriter](https://github.com/duncan3dc/domparser) class)
 
 
 Interface

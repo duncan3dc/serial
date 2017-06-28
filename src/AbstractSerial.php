@@ -30,7 +30,6 @@ abstract class AbstractSerial implements SerialInterface
     }
 
 
-
     public static function encodeToFile(string $path, $array): void
     {
         $string = static::encode($array);
