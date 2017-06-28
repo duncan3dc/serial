@@ -29,7 +29,6 @@ abstract class AbstractSerial implements SerialInterface
     }
 
 
-
     /**
      * Convert an array to a serial string, and then write it to a file.
      *
