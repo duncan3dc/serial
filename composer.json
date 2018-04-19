@@ -13,6 +13,7 @@
     }],
     "require": {
         "symfony/yaml": "^2.5|^3.0",
+        "yosymfony/toml": "^1.0",
         "ext-json": "*",
         "php": "^7.1"
     },
