@@ -2,33 +2,39 @@
 
 namespace duncan3dc\SerialTests;
 
+use duncan3dc\Serial\Exceptions\InvalidArgumentException;
 use duncan3dc\Serial\Php;
 use PHPUnit\Framework\TestCase;
 
 class PhpTest extends TestCase
 {
 
-    public function testEncodeEmpty1()
-    {
-        $this->assertSame("", Php::encode(null));
-    }
-    public function testEncodeEmpty2()
+    public function testEncodeEmpty()
     {
         $this->assertSame("", Php::encode([]));
     }
-    public function testEncodeEmpty3()
-    {
-        $this->assertSame('i:0;', Php::encode(0));
-    }
-    public function testEncodeEmpty4()
-    {
-        $this->assertSame('s:0:"";', Php::encode(""));
-    }
 
 
-    public function testEncodeString1()
+    public function invalidValueProvider()
     {
-        $this->assertSame('s:4:"test";', Php::encode("test"));
+        $values = [
+            null,
+            0,
+            "",
+            "test",
+        ];
+        foreach ($values as $value) {
+            yield [$value];
+        }
+    }
+    /**
+     * @dataProvider invalidValueProvider
+     */
+    public function testEncodeInvalidValue($value)
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("Only arrays or ArrayObjects can be encoded");
+        Php::encode($value);
     }
 
 

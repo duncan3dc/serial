@@ -2,6 +2,7 @@
 
 namespace duncan3dc\SerialTests;
 
+use duncan3dc\Serial\Exceptions\InvalidArgumentException;
 use duncan3dc\Serial\Json;
 use duncan3dc\Serial\Exceptions\JsonException;
 use PHPUnit\Framework\TestCase;
@@ -9,61 +10,50 @@ use PHPUnit\Framework\TestCase;
 class JsonTest extends TestCase
 {
 
-    public function testEncodeEmpty1()
-    {
-        $this->assertSame("", Json::encode(null));
-    }
-    public function testEncodeEmpty2()
+    public function testEncodeEmpty()
     {
         $this->assertSame("", Json::encode([]));
     }
-    public function testEncodeEmpty3()
+
+
+    public function invalidValueProvider()
     {
-        $this->assertSame("0", Json::encode(0));
+        $values = [
+            null,
+            0,
+            "",
+            "test",
+        ];
+        foreach ($values as $value) {
+            yield [$value];
+        }
     }
-    public function testEncodeEmpty4()
+    /**
+     * @dataProvider invalidValueProvider
+     */
+    public function testEncodeInvalidValue($value)
     {
-        $this->assertSame('""', Json::encode(""));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("Only arrays or ArrayObjects can be encoded");
+        Json::encode($value);
     }
 
 
-    public function testEncodeString1()
-    {
-        $this->assertSame('"test"', Json::encode("test"));
-    }
-
-
-    public function testEncodeArray1()
+    public function testEncodeInteger()
     {
         $this->assertSame('{"one":1}', Json::encode(["one" => 1]));
     }
-    public function testEncodeArray2()
+
+
+    public function testEncodeString()
     {
         $this->assertSame('{"one":"1"}', Json::encode(["one" => "1"]));
     }
 
 
-    public function testDecodeEmpty1()
-    {
-        $this->assertSame([], Json::decode(null)->asArray());
-    }
-    public function testDecodeEmpty2()
+    public function testDecodeEmpty()
     {
         $this->assertSame([], Json::decode("")->asArray());
-    }
-    public function testDecodeEmpty3()
-    {
-        $this->assertSame([], Json::decode(0)->asArray());
-    }
-    public function testDecodeEmpty4()
-    {
-        $this->assertSame([], Json::decode("0")->asArray());
-    }
-
-
-    public function testDecodeString1()
-    {
-        $this->assertSame([], Json::decode('"test"')->asArray());
     }
 
 
@@ -75,11 +65,13 @@ class JsonTest extends TestCase
     }
 
 
-    public function testDecodeArray1()
+    public function testDecodeInteger()
     {
         $this->assertSame(["one" => 1], Json::decode('{"one":1}')->asArray());
     }
-    public function testDecodeArray2()
+
+
+    public function testDecodeString()
     {
         $this->assertSame(["one" => "1"], Json::decode('{"one":"1"}')->asArray());
     }
