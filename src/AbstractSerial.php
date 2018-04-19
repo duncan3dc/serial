@@ -3,6 +3,9 @@
 namespace duncan3dc\Serial;
 
 use duncan3dc\Serial\Exceptions\FileException;
+use duncan3dc\Serial\Exceptions\InvalidArgumentException;
+
+use function is_array;
 
 abstract class AbstractSerial implements SerialInterface
 {
@@ -21,8 +24,8 @@ abstract class AbstractSerial implements SerialInterface
             return $data->asArray();
         }
 
-        if ($data === null) {
-            return [];
+        if (!is_array($data)) {
+            throw new InvalidArgumentException("Only arrays or ArrayObjects can be encoded");
         }
 
         return $data;
