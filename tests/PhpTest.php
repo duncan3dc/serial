@@ -3,8 +3,9 @@
 namespace duncan3dc\SerialTests;
 
 use duncan3dc\Serial\Php;
+use PHPUnit\Framework\TestCase;
 
-class PhpTest extends \PHPUnit_Framework_TestCase
+class PhpTest extends TestCase
 {
 
     public function testEncodeEmpty1()

@@ -3,8 +3,10 @@
 namespace duncan3dc\SerialTests;
 
 use duncan3dc\Serial\Json;
+use duncan3dc\Serial\Exceptions\JsonException;
+use PHPUnit\Framework\TestCase;
 
-class JsonTest extends \PHPUnit_Framework_TestCase
+class JsonTest extends TestCase
 {
 
     public function testEncodeEmpty1()
@@ -62,6 +64,14 @@ class JsonTest extends \PHPUnit_Framework_TestCase
     public function testDecodeString1()
     {
         $this->assertSame([], Json::decode('"test"')->asArray());
+    }
+
+
+    public function testCheckLastErrorWithErrorMessage()
+    {
+        $this->expectException(JsonException::class);
+        $this->expectExceptionMessage("JSON Error: Syntax error");
+        Json::decode('{"one":}');
     }
 
 

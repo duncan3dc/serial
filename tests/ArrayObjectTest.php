@@ -3,8 +3,9 @@
 namespace duncan3dc\SerialTests;
 
 use duncan3dc\Serial\ArrayObject;
+use PHPUnit\Framework\TestCase;
 
-class ArrayObjectTest extends \PHPUnit_Framework_TestCase
+class ArrayObjectTest extends TestCase
 {
 
 

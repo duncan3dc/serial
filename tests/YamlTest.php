@@ -3,8 +3,9 @@
 namespace duncan3dc\SerialTests;
 
 use duncan3dc\Serial\Yaml;
+use PHPUnit\Framework\TestCase;
 
-class YamlTest extends \PHPUnit_Framework_TestCase
+class YamlTest extends TestCase
 {
 
     public function testEncodeEmpty1()
