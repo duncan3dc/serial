@@ -3,9 +3,9 @@ serial
 
 A collection of PHP serialization helpers with a consistent interface for each.
 
-[![Latest Stable Version](https://poser.pugx.org/duncan3dc/serial/version.svg)](https://packagist.org/packages/duncan3dc/serial)
-[![Build Status](https://travis-ci.org/duncan3dc/serial.svg?branch=master)](https://travis-ci.org/duncan3dc/serial)
-[![Coverage Status](https://coveralls.io/repos/github/duncan3dc/serial/badge.svg)](https://coveralls.io/github/duncan3dc/serial)
+[![release](https://poser.pugx.org/duncan3dc/serial/version.svg)](https://packagist.org/packages/duncan3dc/serial)
+[![build](https://travis-ci.org/duncan3dc/serial.svg?branch=master)](https://travis-ci.org/duncan3dc/serial)
+[![coverage](https://codecov.io/gh/duncan3dc/serial/graph/badge.svg)](https://codecov.io/gh/duncan3dc/serial)
 
 
 Available Classes
