@@ -23,5 +23,11 @@
     },
     "autoload-dev": {
         "psr-4": {"duncan3dc\\SerialTests\\": "tests/"}
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit --coverage-text",
+            "@composer validate --strict"
+        ]
     }
 }
