@@ -13,9 +13,11 @@
     }],
     "require": {
         "symfony/yaml": "^2.5|^3.0",
+        "ext-json": "*",
         "php": "^7.1"
     },
     "require-dev": {
+        "maglnet/composer-require-checker": "^1.1",
         "phpunit/phpunit": "^7.0"
     },
     "autoload": {
@@ -27,6 +29,7 @@
     "scripts": {
         "test": [
             "vendor/bin/phpunit --coverage-text",
+            "vendor/bin/composer-require-checker",
             "@composer validate --strict"
         ]
     }
