@@ -33,7 +33,7 @@ class Yaml extends AbstractSerial
     public static function decode($string)
     {
         if (!$string) {
-            return new ArrayObject;
+            return new ArrayObject();
         }
 
         $array = SymfonyYaml::parse($string);
