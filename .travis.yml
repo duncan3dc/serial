@@ -33,6 +33,10 @@ jobs:
       script:
         - vendor/bin/phpcs --standard=PSR1,PSR2,PSR12 src tests
 
+    - stage: code quality
+      script:
+        - vendor/bin/phpstan analyse --level=max --configuration=phpstan.neon src tests
+
     - stage: coverage
       script:
         - vendor/bin/phpunit --coverage-clover=coverage.xml

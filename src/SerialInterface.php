@@ -8,7 +8,7 @@ interface SerialInterface
     /**
      * Convert an array to a serial string.
      *
-     * @param array|ArrayObject The data to encode
+     * @param array|ArrayObject $array The data to encode
      *
      * @return string
      */
@@ -18,7 +18,7 @@ interface SerialInterface
     /**
      * Convert a serial string to an array.
      *
-     * @param array The data to decode
+     * @param string $string The data to decode
      *
      * @return ArrayObject
      */
@@ -30,8 +30,8 @@ interface SerialInterface
      *
      * Attempts to create the directory if it does not exist.
      *
-     * @param string The path to the file to write
-     * @param array|ArrayObject The data to decode
+     * @param string $path The path to the file to write
+     * @param array|ArrayObject $array The data to decode
      *
      * @return void
      */
@@ -41,7 +41,7 @@ interface SerialInterface
     /**
      * Read a serial string from a file and convert it to an array.
      *
-     * @param string The path of the file to read
+     * @param string $path The path of the file to read
      *
      * @return ArrayObject
      */
