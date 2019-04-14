@@ -1,6 +1,22 @@
 Changelog
 =========
 
+## 1.2.0 - 2019-04-14
+
+### Added
+
+* [Exceptions] Added a `SerialException` interface that all library exceptions implement.
+
+### Changed
+
+* [Support] Added support for Symfony 4
+* [Support] Added support for PHP 7.3
+* [Support] Dropped support for PHP 7.1
+* [Support] Dropped support for PHP 7.0
+* [Support] Dropped support for PHP 5.6
+
+--------
+
 ## 1.1.0 - 2018-04-09
 
 ### Changed
