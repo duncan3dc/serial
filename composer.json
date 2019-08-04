@@ -14,7 +14,7 @@
     "require": {
         "symfony/yaml": "^3.4 || ^4.2",
         "ext-json": "*",
-        "php": "^7.1"
+        "php": "^7.2"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^1.1",
