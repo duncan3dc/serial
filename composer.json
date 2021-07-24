@@ -17,10 +17,10 @@
         "php": "^7.4"
     },
     "require-dev": {
-        "maglnet/composer-require-checker": "^1.1",
-        "phpstan/phpstan": "^0.10.7",
-        "squizlabs/php_codesniffer": "^3.3.2",
-        "phpunit/phpunit": "^7.0"
+        "maglnet/composer-require-checker": "^3.3",
+        "phpstan/phpstan": "^0.12.93",
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {"duncan3dc\\Serial\\": "src/"}
