@@ -9,7 +9,7 @@ class ArrayObjectTest extends TestCase
 {
 
 
-    public function testSimpleField()
+    public function testSimpleField(): void
     {
         $test = ArrayObject::make([
             "field1"    =>  "one",
@@ -19,7 +19,7 @@ class ArrayObjectTest extends TestCase
     }
 
 
-    public function testMutliDimensional()
+    public function testMutliDimensional(): void
     {
         $test = ArrayObject::make([
             "data"    =>  [
@@ -31,7 +31,7 @@ class ArrayObjectTest extends TestCase
     }
 
 
-    public function testNumericallyIndexed()
+    public function testNumericallyIndexed(): void
     {
         $test = ArrayObject::make([
             "value1",
@@ -50,7 +50,7 @@ class ArrayObjectTest extends TestCase
     }
 
 
-    public function testForeach()
+    public function testForeach(): void
     {
         $values = [
             "value1",
@@ -69,7 +69,7 @@ class ArrayObjectTest extends TestCase
     }
 
 
-    public function testCount()
+    public function testCount(): void
     {
         $test = ArrayObject::make([
             "value1",
@@ -82,7 +82,7 @@ class ArrayObjectTest extends TestCase
     }
 
 
-    public function testCountZero()
+    public function testCountZero(): void
     {
         $test = ArrayObject::make([]);
 
@@ -90,7 +90,7 @@ class ArrayObjectTest extends TestCase
     }
 
 
-    public function testIsset()
+    public function testIsset(): void
     {
         $test = ArrayObject::make([
             "field1"    =>  "value1",
@@ -104,7 +104,7 @@ class ArrayObjectTest extends TestCase
     }
 
 
-    public function testAsArray()
+    public function testAsArray(): void
     {
         $data = [
             "one"   =>  1,
@@ -118,21 +118,21 @@ class ArrayObjectTest extends TestCase
     }
 
 
-    public function testAsJson()
+    public function testAsJson(): void
     {
         $data = ["one" => 1, "two" => 2];
         $this->assertSame('{"one":1,"two":2}', ArrayObject::make($data)->asJson());
     }
 
 
-    public function testAsPhp()
+    public function testAsPhp(): void
     {
         $data = ["one" => 1, "two" => 2];
         $this->assertSame('a:2:{s:3:"one";i:1;s:3:"two";i:2;}', ArrayObject::make($data)->asPhp());
     }
 
 
-    public function testAsYaml()
+    public function testAsYaml(): void
     {
         $data = ["one" => 1, "two" => 2];
         $this->assertSame("one: 1\ntwo: 2\n", ArrayObject::make($data)->asYaml());
