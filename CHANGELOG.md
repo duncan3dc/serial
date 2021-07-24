@@ -1,6 +1,23 @@
 Changelog
 =========
 
+## 2.0.0 - 2021-07-24
+
+### Changed
+
+* [Serializers] Invalid input is no longer silently converted, it will now be rejected with an InvalidArgumentException.
+* All public methods now use parameter and return types where possible.
+
+### Added
+
+* [Support] Added support for PHP 8.0
+
+### Removed
+
+* [Support] Dropped support for PHP 7.1, 7.2, and 7.3
+
+--------
+
 ## 1.2.0 - 2019-04-14
 
 ### Added
@@ -74,5 +91,3 @@ Changelog
 ### Added
 
 * [Serializer] Created a JSON serializer.
-
---------
