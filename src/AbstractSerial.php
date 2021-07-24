@@ -16,9 +16,9 @@ abstract class AbstractSerial implements SerialInterface
      *
      * @param mixed $data The array-like structure to convert
      *
-     * @return array
+     * @return array<int|string,mixed>
      */
-    protected static function asArray($data)
+    protected static function asArray($data): array
     {
         if ($data instanceof ArrayObject) {
             return $data->asArray();
@@ -33,12 +33,7 @@ abstract class AbstractSerial implements SerialInterface
 
 
 
-    /**
-     * Convert an array to a serial string, and then write it to a file.
-     *
-     * {@inheritDoc}
-     */
-    public static function encodeToFile($path, $array)
+    public static function encodeToFile(string $path, $array): void
     {
         $string = static::encode($array);
 
@@ -54,12 +49,7 @@ abstract class AbstractSerial implements SerialInterface
     }
 
 
-    /**
-     * Read a serial string from a file and convert it to an array.
-     *
-     * {@inheritDoc}
-     */
-    public static function decodeFromFile($path)
+    public static function decodeFromFile(string $path): ArrayObject
     {
         if (!is_file($path)) {
             throw new FileException("File does not exist: {$path}");

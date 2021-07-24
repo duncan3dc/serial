@@ -4,6 +4,7 @@ namespace duncan3dc\Serial;
 
 /**
  * Allow both object/property and array/key access to data.
+ * @template-extends \ArrayObject<int|string,mixed>
  */
 class ArrayObject extends \ArrayObject
 {
@@ -11,11 +12,9 @@ class ArrayObject extends \ArrayObject
     /**
      * Create a new instance from a basic array.
      *
-     * @param array $data The array to convert
-     *
-     * @return self
+     * @param array<int|string,mixed> $data The array to convert
      */
-    public static function make(array $data)
+    public static function make(array $data): self
     {
         # Convert values to ArrayObject instances
         foreach ($data as &$value) {
@@ -32,9 +31,9 @@ class ArrayObject extends \ArrayObject
     /**
      * Convert the current instance to a basic array.
      *
-     * @return array
+     * @return array<int|string,mixed>
      */
-    public function asArray()
+    public function asArray(): array
     {
         $array = [];
 
@@ -54,7 +53,7 @@ class ArrayObject extends \ArrayObject
      *
      * @return string
      */
-    public function asJson()
+    public function asJson(): string
     {
         return Json::encode($this);
     }
@@ -65,7 +64,7 @@ class ArrayObject extends \ArrayObject
      *
      * @return string
      */
-    public function asPhp()
+    public function asPhp(): string
     {
         return Php::encode($this);
     }
@@ -76,7 +75,7 @@ class ArrayObject extends \ArrayObject
      *
      * @return string
      */
-    public function asYaml()
+    public function asYaml(): string
     {
         return Yaml::encode($this);
     }

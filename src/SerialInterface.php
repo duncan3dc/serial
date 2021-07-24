@@ -8,11 +8,11 @@ interface SerialInterface
     /**
      * Convert an array to a serial string.
      *
-     * @param array|ArrayObject $array The data to encode
+     * @param array<int|string,mixed>|ArrayObject<int|string,mixed> $array The data to encode
      *
      * @return string
      */
-    public static function encode($array);
+    public static function encode($array): string;
 
 
     /**
@@ -20,9 +20,9 @@ interface SerialInterface
      *
      * @param string $string The data to decode
      *
-     * @return ArrayObject
+     * @return ArrayObject<int|string,mixed>
      */
-    public static function decode($string);
+    public static function decode(string $string): ArrayObject;
 
 
     /**
@@ -31,11 +31,11 @@ interface SerialInterface
      * Attempts to create the directory if it does not exist.
      *
      * @param string $path The path to the file to write
-     * @param array|ArrayObject $array The data to decode
+     * @param array<int|string,mixed>|ArrayObject<int|string,mixed> $array The data to decode
      *
      * @return void
      */
-    public static function encodeToFile($path, $array);
+    public static function encodeToFile(string $path, $array): void;
 
 
     /**
@@ -43,7 +43,7 @@ interface SerialInterface
      *
      * @param string $path The path of the file to read
      *
-     * @return ArrayObject
+     * @return ArrayObject<int|string,mixed>
      */
-    public static function decodeFromFile($path);
+    public static function decodeFromFile(string $path): ArrayObject;
 }

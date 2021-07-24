@@ -5,15 +5,15 @@ namespace duncan3dc\Serial;
 use duncan3dc\Serial\Exceptions\YamlException;
 use Symfony\Component\Yaml\Yaml as SymfonyYaml;
 
+use function trim;
+
 class Yaml extends AbstractSerial
 {
 
     /**
      * Convert an array to a Yaml string.
-     *
-     * {@inheritDoc}
      */
-    public static function encode($array)
+    public static function encode($array): string
     {
         $array = static::asArray($array);
 
@@ -27,12 +27,10 @@ class Yaml extends AbstractSerial
 
     /**
      * Convert a yaml string to an array.
-     *
-     * {@inheritDoc}
      */
-    public static function decode($string)
+    public static function decode(string $string): ArrayObject
     {
-        if (!$string) {
+        if (trim($string) === "") {
             return new ArrayObject();
         }
 

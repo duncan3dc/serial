@@ -4,15 +4,15 @@ namespace duncan3dc\Serial;
 
 use duncan3dc\Serial\Exceptions\PhpException;
 
+use function trim;
+
 class Php extends AbstractSerial
 {
 
     /**
      * Convert an array to a php serialized string.
-     *
-     * {@inheritDoc}
      */
-    public static function encode($array)
+    public static function encode($array): string
     {
         $array = static::asArray($array);
 
@@ -32,12 +32,10 @@ class Php extends AbstractSerial
 
     /**
      * Convert a php serialized string to an array.
-     *
-     * {@inheritDoc}
      */
-    public static function decode($string)
+    public static function decode(string $string): ArrayObject
     {
-        if (!$string) {
+        if (trim($string) === "") {
             return new ArrayObject();
         }
 

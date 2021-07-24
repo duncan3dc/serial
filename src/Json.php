@@ -4,15 +4,17 @@ namespace duncan3dc\Serial;
 
 use duncan3dc\Serial\Exceptions\JsonException;
 
+use function assert;
+use function is_string;
+use function trim;
+
 class Json extends AbstractSerial
 {
 
     /**
      * Convert an array to a JSON string.
-     *
-     * {@inheritDoc}
      */
-    public static function encode($array)
+    public static function encode($array): string
     {
         $array = static::asArray($array);
 
@@ -23,6 +25,7 @@ class Json extends AbstractSerial
         $string = json_encode($array);
 
         static::checkLastError();
+        assert(is_string($string));
 
         return $string;
     }
@@ -30,12 +33,10 @@ class Json extends AbstractSerial
 
     /**
      * Convert a JSON string to an array.
-     *
-     * {@inheritDoc}
      */
-    public static function decode($string)
+    public static function decode(string $string): ArrayObject
     {
-        if (!$string) {
+        if (trim($string) === "") {
             return new ArrayObject();
         }
 
@@ -55,10 +56,8 @@ class Json extends AbstractSerial
      * Check if the last json operation returned an error and convert it to an exception.
      * Designed as an internal method called after any json operation,
      * but there's no reason it can't be called after a straight call to the php json_* functions.
-     *
-     * @return void
      */
-    public static function checkLastError()
+    public static function checkLastError(): void
     {
         $error = json_last_error();
 
