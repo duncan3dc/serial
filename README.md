@@ -4,7 +4,7 @@ serial
 A collection of PHP serialization helpers with a consistent interface for each.
 
 [![release](https://poser.pugx.org/duncan3dc/serial/version.svg)](https://packagist.org/packages/duncan3dc/serial)
-[![build](https://travis-ci.org/duncan3dc/serial.svg?branch=master)](https://travis-ci.org/duncan3dc/serial)
+![build](https://github.com/duncan3dc/serial/workflows/buildcheck/badge.svg?branch=master)](https://github.com/duncan3dc/serial/actions?query=branch%3Amaster+workflow%3Abuildcheck)
 [![coverage](https://codecov.io/gh/duncan3dc/serial/graph/badge.svg)](https://codecov.io/gh/duncan3dc/serial)
 
 
