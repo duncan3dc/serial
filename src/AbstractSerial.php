@@ -9,8 +9,6 @@ use function is_array;
 
 abstract class AbstractSerial implements SerialInterface
 {
-
-
     /**
      * Ensure the passed data is a basic array.
      *

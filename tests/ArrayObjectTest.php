@@ -7,8 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class ArrayObjectTest extends TestCase
 {
-
-
     public function testSimpleField(): void
     {
         $test = ArrayObject::make([

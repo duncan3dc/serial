@@ -8,7 +8,6 @@ use function trim;
 
 class Php extends AbstractSerial
 {
-
     /**
      * Convert an array to a php serialized string.
      */

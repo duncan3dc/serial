@@ -9,7 +9,6 @@ use function trim;
 
 class Yaml extends AbstractSerial
 {
-
     /**
      * Convert an array to a Yaml string.
      */

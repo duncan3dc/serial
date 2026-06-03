@@ -4,7 +4,6 @@ namespace duncan3dc\Serial;
 
 interface SerialInterface
 {
-
     /**
      * Convert an array to a serial string.
      *

@@ -8,7 +8,6 @@ namespace duncan3dc\Serial;
  */
 class ArrayObject extends \ArrayObject
 {
-
     /**
      * Create a new instance from a basic array.
      *

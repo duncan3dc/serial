@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class PhpTest extends TestCase
 {
-
-
     public function testEncodeEmpty(): void
     {
         $this->assertSame("", Php::encode([]));

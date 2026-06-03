@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class YamlTest extends TestCase
 {
-
     public function testEncodeEmpty(): void
     {
         $this->assertSame("", Yaml::encode([]));

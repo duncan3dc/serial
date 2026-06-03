@@ -10,7 +10,6 @@ use function trim;
 
 class Json extends AbstractSerial
 {
-
     /**
      * Convert an array to a JSON string.
      */

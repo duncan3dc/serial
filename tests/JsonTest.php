@@ -9,8 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 class JsonTest extends TestCase
 {
-
-
     public function testEncodeEmpty(): void
     {
         $this->assertSame("", Json::encode([]));
