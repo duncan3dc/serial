@@ -1,7 +1,8 @@
 ARG PHP_VERSION=7.4
 FROM php:${PHP_VERSION}-cli
 
-RUN pecl install pcov && docker-php-ext-enable pcov
+ARG COVERAGE
+RUN if [ "$COVERAGE" = "pcov" ]; then pecl install pcov && docker-php-ext-enable pcov; fi
 
 # Install composer to manage PHP dependencies
 RUN apt-get update && apt-get install -y git zip
