@@ -17,7 +17,7 @@ class Json extends AbstractSerial
     {
         $array = static::asArray($array);
 
-        if (is_array($array) && count($array) < 1) {
+        if ($array === []) {
             return "";
         }
 

@@ -37,7 +37,7 @@ class YamlTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Only arrays or ArrayObjects can be encoded");
-        Yaml::encode($value);
+        Yaml::encode($value); /** @phpstan-ignore argument.type */
     }
 
 
