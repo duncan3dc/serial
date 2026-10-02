@@ -4,7 +4,7 @@ serial
 A collection of PHP serialization helpers with a consistent interface for each.
 
 [![release](https://poser.pugx.org/duncan3dc/serial/version.svg)](https://packagist.org/packages/duncan3dc/serial)
-![build](https://github.com/duncan3dc/serial/workflows/buildcheck/badge.svg?branch=main)](https://github.com/duncan3dc/serial/actions?query=branch%3Amain+workflow%3Abuildcheck)
+[![build](https://github.com/duncan3dc/serial/actions/workflows/buildcheck.yaml/badge.svg)](https://github.com/duncan3dc/serial/actions/workflows/buildcheck.yaml?query=branch%3Amain)
 [![coverage](https://codecov.io/gh/duncan3dc/serial/graph/badge.svg)](https://codecov.io/gh/duncan3dc/serial)
 
 
@@ -72,3 +72,9 @@ $yaml = $data->asYaml();
 $json = $data->asJson();
 $php = $data->asPhp();
 ```
+
+
+## Where to get help
+Found a bug? Got a question? Just not sure how something works?  
+Please [create an issue](https://github.com/duncan3dc/serial/issues) and I'll do my best to help out.  
+Alternatively you can connect with me on [LinkedIn](https://linkedin.com/in/duncan3dc)
