@@ -37,7 +37,7 @@ class PhpTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Only arrays or ArrayObjects can be encoded");
-        Php::encode($value);
+        Php::encode($value); /** @phpstan-ignore argument.type */
     }
 
 

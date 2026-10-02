@@ -24,7 +24,11 @@ class ArrayObjectTest extends TestCase
                 "field2"    =>  77,
             ],
         ]);
+
+        // @phpstan-ignore property.nonObject
         $this->assertSame(77, $test->data->field2);
+
+        // @phpstan-ignore offsetAccess.nonOffsetAccessible
         $this->assertSame(77, $test["data"]["field2"]);
     }
 
